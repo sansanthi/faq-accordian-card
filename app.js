@@ -1,14 +1,14 @@
-let downArrIcon = document.querySelectorAll('.down-icon');
 const questionBox = document.querySelectorAll('.question-box');
+const questionText = document.querySelectorAll('.question');
 
-downArrIcon.forEach(function(btn){
-    btn.addEventListener('click',function(e){
-        const question = e.currentTarget.parentElement.parentElement;
-        questionBox.forEach(function(item){
-                        if(item !== question){
-                            item.classList.remove('show');
-                        }
-                    });
+questionText.forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+        const question = e.currentTarget.parentElement;
+        questionBox.forEach(function (item) {
+            if (item !== question) {
+                item.classList.remove('show');
+            }
+        });
         question.classList.toggle('show');
-    })
-})
+    });
+});
